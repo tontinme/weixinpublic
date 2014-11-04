@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<!-- Thanks for code provider/ -->
+<html>
+      <head lang="en">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	
+	<title>ivu</title>
+
+	<link rel="stylesheet" type="text/css" href="./stylesheets/style.css">	
+
+	<!--爱心-->
+	<link href="./stylesheets/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="./stylesheets/garden.js"></script>
+	<script type="text/javascript" src="./stylesheets/jquery.js"></script>
+	<script type="text/javascript" src="./stylesheets/functions.js"></script>
+
+<body>
+
+	<div class="slide story" id="slide-6" data-slide="6">
+		<div class="container">
+			<div class="row line-row">
+				<div class="col-12 font-light" style="color:#ff607c">你饿不饿，我做饭给你吃</div>
+			</div><!-- /row -->
+			<div class="row line-row">
+				<div class="hr">&nbsp;</div>
+			</div><!-- /row -->
+			
+			<div id="mainDiv">
+			<div id="loveHeart">
+				<canvas id="garden" width="670" height="625"></canvas>
+				&lt;<div id="words" style="position: absolute; top: 195px; left: 70px;">
+					<div id="messages" style="display: block;">
+						不知不觉我们已经走了这么远
+						<div id="elapseClock"><span class="digit">1938</span> days <span class="digit">19</span> hours <span class="digit">45</span> minutes <span class="digit">14</span> seconds</div>
+					</div>
+					<div id="loveu" style="display: block;">
+						而且还要一直往前走... ...<br>
+						<div class="signature">-- I ♥ U</div>
+					</div>
+				</div>
+			</div>
+			</div><!--/mainDiv-->
+			<div class="row line-row">
+				<div class="col-12 font-light" style="color:red">假如人生不曾相遇，我不会相信，有一种人可以百看不厌，有一种人一认识就觉得温暖。</div>
+			</div><!-- /row -->
+			<div class="row line-row">
+				<div class="hr">
+				<br>
+				<span style="color:#2b7dad">爱情是什么呢？或许是一刹那的怦然心动，或许是一眨眼的心有灵犀，或许是肉体契合欢愉，但更有可能是，在遇到心动心有灵犀肉体契合等各种情况时，仍坚持没有离开那个人。在重重误会和伤害过后，仍留在他身边，将初衷变成最终。</span>
+				</div>
+				<br><br><br><br>
+			</div><!-- /row -->
+		</div><!-- /container -->
+	</div><!-- /Slide 6 -->
+	
+
+
+	<!-- SCRIPTS -->
+
+	<script src="./stylesheets/html5shiv.js"></script>
+	<script src="./stylesheets/jquery-1.10.2.min.js"></script>
+	<script src="./stylesheets/jquery-migrate-1.2.1.min.js"></script>
+	<script src="./stylesheets/bootstrap.min.js"></script>
+	<script src="./stylesheets/jquery.easing.1.3.js"></script>
+	<script type="text/javascript" src="./stylesheets/jquery.fancybox.pack-v=2.1.5.js"></script>
+	<script src="./stylesheets/script.js"></script>
+	<!-- fancybox init -->
+	<script>
+	$(document).ready(function(e) {
+		var lis = $('.nav > li');
+		menu_focus( lis[0], 1 );
+		
+		$(".fancybox").fancybox({
+			padding: 10,
+			helpers: {
+				overlay: {
+					locked: false
+				}
+			}
+		});
+	
+	});
+	</script>
+
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		
+		var together = new Date();
+		together.setFullYear(2013, 1, 1);
+		together.setHours(12);
+		together.setMinutes(35);
+		together.setSeconds(00);
+		together.setMilliseconds(0);
+		
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 5000);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+		</script>
+</body>
+</html>
