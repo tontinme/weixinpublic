@@ -68,6 +68,8 @@ def work_card(msg):
 		echostr = baiduhot.fetchBaiduHot(msg)
 	    if msg["EventKey"] == "weather":
 		echostr = weather.fetchWeather(msg)
+	    if msg["EventKey"] == "xiache":
+		echostr = xiache.fetchzhihuXiache(msg)
 	    if msg["EventKey"] == "stock":
 		tmpstr = "目前尚不支持点击操作，请手动输入'stock STOCK_NAME'处理"
 		echostr = textTpl % (
@@ -91,6 +93,8 @@ def work_card(msg):
 	    echostr = weather.fetchWeather(msg)
 	elif msg['Content'].lower() in ['hot', 'baidu', u'百度', u'热点', u'新闻']:
 	    echostr = baiduhot.fetchBaiduHot(msg)
+	elif msg['Content'].lower() in ['xiache', 'zhihu', u'知乎', u'tucao', u'吐槽', u'瞎扯']:
+	    echostr = xiache.fetchzhihuXiache(msg)
 	elif msg['Content'].strip().lower().startswith('stock'):
 	    echostr = stock.fetchStock(msg)
 	else:
